@@ -1,71 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.japkaur.one.MainActivity">
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/donateabook"
         android:layout_width="195dp"
         android:layout_height="89dp"
         android:text="Donate a book"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="70dp"
+        android:onClick="openCreateAvailable"
         tools:layout_editor_absoluteX="95dp"
         tools:layout_editor_absoluteY="117dp" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/requestabook"
         android:layout_width="198dp"
         android:layout_height="90dp"
         android:text="Request a book"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="70dp"
+        android:onClick="openCreateRequest"
         tools:layout_editor_absoluteX="93dp"
         tools:layout_editor_absoluteY="269dp" />
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="44dp"
-        android:layout_height="40dp"
-        app:srcCompat="@drawable/account"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="442dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="90dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="30dp"
+                app:srcCompat="@drawable/account"
+                android:onClick="openMyAccount"
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="43dp"
-        android:layout_height="36dp"
-        app:srcCompat="@drawable/book"
-        tools:layout_editor_absoluteY="442dp"
-        tools:layout_editor_absoluteX="171dp" />
+                tools:layout_editor_absoluteX="47dp"
+                tools:layout_editor_absoluteY="442dp" />
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Account"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:onClick="openMyAccount"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="485dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="50dp"
+                app:srcCompat="@drawable/book"
+                android:onClick="openIAmHereTo"
+                tools:layout_editor_absoluteY="442dp"
+                tools:layout_editor_absoluteX="171dp" />
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I am here to..."
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="5dp"
+                android:onClick="openIAmHereTo"
+                tools:layout_editor_absoluteX="147dp"
+                tools:layout_editor_absoluteY="483dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="44dp"
-        android:layout_height="37dp"
-        app:srcCompat="@drawable/dash"
-        tools:layout_editor_absoluteY="442dp"
-        tools:layout_editor_absoluteX="290dp" />
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/dash"
+                android:onClick="openDashboard"
+                tools:layout_editor_absoluteY="442dp"
+                tools:layout_editor_absoluteX="290dp" />
 
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My Account"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="485dp" />
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="I am here to..."
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="483dp" />
-
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dashboard"
-        tools:layout_editor_absoluteX="283dp"
-        tools:layout_editor_absoluteY="485dp" />
-</android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:onClick="openDashboard"
+                tools:layout_editor_absoluteX="283dp"
+                tools:layout_editor_absoluteY="485dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,101 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
     tools:context="com.japkaur.one.MainActivity">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="44dp"
-        android:layout_height="18dp"
-        android:text="Name: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="56dp" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="41dp" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="35dp"
+        >
+        <TextView
+            android:id="@+id/edit_name"
+            android:layout_width="44dp"
+            android:layout_height="18dp"
+            android:text="Name: "
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="41dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/edit_entername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginLeft="75dp"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="16dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Username: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="122dp" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="25dp"
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/edit_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username: "
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="91dp" />
+        <EditText
+            android:id="@+id/edit_enterusername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginLeft="50dp"
+
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="78dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="194dp" />
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        >
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/edit_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email: "
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="260dp" />
+
+        <EditText
+            android:id="@+id/edit_enteremail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginLeft="80dp"
+
+            android:inputType="textEmailAddress"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="247dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contact Number: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="265dp" />
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        >
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/edit_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Number: "
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="321dp" />
+        <EditText
+            android:id="@+id/edit_entercontact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginLeft="15dp"
+
+            android:inputType="phone"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="305dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Address: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="340dp" />
+        android:layout_marginLeft="25dp"
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit changes"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="421dp" />
+        android:layout_marginTop="25dp">
+        <TextView
+            android:id="@+id/edit_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address: "
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="380dp" />
 
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="105dp" />
+        <EditText
+            android:id="@+id/edit_enteraddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginLeft="65dp"
 
-    <EditText
-        android:id="@+id/editText8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="183dp" />
+            android:inputType="textPostalAddress"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="367dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="30dp"
+                app:srcCompat="@drawable/account"
+                android:onClick="openMyAccount"
 
-    <EditText
-        android:id="@+id/editText9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="254dp" />
+                tools:layout_editor_absoluteX="47dp"
+                tools:layout_editor_absoluteY="442dp" />
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Account"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:onClick="openMyAccount"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="485dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="50dp"
+                app:srcCompat="@drawable/book"
+                android:onClick="openIAmHereTo"
+                tools:layout_editor_absoluteY="442dp"
+                tools:layout_editor_absoluteX="171dp" />
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I am here to..."
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="5dp"
+                android:onClick="openIAmHereTo"
+                tools:layout_editor_absoluteX="147dp"
+                tools:layout_editor_absoluteY="483dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editText10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPostalAddress"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="332dp" />
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/dash"
+                android:onClick="openDashboard"
+                tools:layout_editor_absoluteY="442dp"
+                tools:layout_editor_absoluteX="290dp" />
 
-</android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:onClick="openDashboard"
+                tools:layout_editor_absoluteX="283dp"
+                tools:layout_editor_absoluteY="485dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

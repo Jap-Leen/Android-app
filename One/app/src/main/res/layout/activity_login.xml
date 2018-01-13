@@ -1,59 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.japkaur.one.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/login_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New User? Sign up here!"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="418dp" />
-
-    <Button
-        android:id="@+id/Login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="301dp" />
-
+        android:text="Email:"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="43dp" />
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/login_enterusername"
+        android:layout_width="270dp"
+        android:layout_height="47dp"
         android:ems="10"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="77dp"
         tools:layout_editor_absoluteY="89dp" />
 
+
+    <TextView
+        android:id="@+id/login_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password:"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="165dp" />
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="213dp"
+        android:id="@+id/login_enterpassword"
+        android:layout_width="270dp"
         android:layout_height="47dp"
         android:ems="10"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="77dp"
         tools:layout_editor_absoluteY="206dp" />
 
-    <TextView
-        android:id="@+id/textView2"
+
+
+    <Button
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email:"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="43dp" />
-
+        android:text="Login"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="150dp"
+        android:onClick=""
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="301dp" />
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Password:"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="165dp" />
+        android:text="New User? Sign up here!"
+        android:onClick=""
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="115dp"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="418dp" />
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+
+
+</LinearLayout>

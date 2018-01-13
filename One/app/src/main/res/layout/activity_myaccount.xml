@@ -1,120 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.japkaur.one.MainActivity">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/mydetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My details"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="16dp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="22dp" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/mydetails_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name:"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="67dp" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/mydetails_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username:"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="114dp" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/mydetails_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email:"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="163dp" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/mydetails_contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Contact:"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="208dp" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/mydetails_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Address:"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="16dp"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="260dp" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/editdetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Edit details"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="16dp"
+        android:onClick="openEditDetails"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="314dp" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/changepassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Change password"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="16dp"
+        android:onClick="openChangePassword"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="363dp" />
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="44dp"
-        android:layout_height="40dp"
-        app:srcCompat="@drawable/account"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="442dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="43dp"
-        android:layout_height="36dp"
-        app:srcCompat="@drawable/book"
-        tools:layout_editor_absoluteY="442dp"
-        tools:layout_editor_absoluteX="171dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="30dp"
+                app:srcCompat="@drawable/account"
+                android:onClick="openMyAccount"
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="44dp"
-        android:layout_height="37dp"
-        app:srcCompat="@drawable/dash"
-        tools:layout_editor_absoluteY="442dp"
-        tools:layout_editor_absoluteX="290dp" />
+                tools:layout_editor_absoluteX="47dp"
+                tools:layout_editor_absoluteY="442dp" />
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Account"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:onClick="openMyAccount"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="485dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="50dp"
+                app:srcCompat="@drawable/book"
+                android:onClick="openIAmHereTo"
+                tools:layout_editor_absoluteY="442dp"
+                tools:layout_editor_absoluteX="171dp" />
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I am here to..."
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="5dp"
+                android:onClick="openIAmHereTo"
+                tools:layout_editor_absoluteX="147dp"
+                tools:layout_editor_absoluteY="483dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My Account"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="485dp" />
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/dash"
+                android:onClick="openDashboard"
+                tools:layout_editor_absoluteY="442dp"
+                tools:layout_editor_absoluteX="290dp" />
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="I am here to..."
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="483dp" />
 
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dashboard"
-        tools:layout_editor_absoluteX="283dp"
-        tools:layout_editor_absoluteY="485dp" />
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:onClick="openDashboard"
+                tools:layout_editor_absoluteX="283dp"
+                tools:layout_editor_absoluteY="485dp" />
+        </LinearLayout>
+    </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

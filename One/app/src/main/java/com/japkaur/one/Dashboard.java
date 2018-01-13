@@ -17,20 +17,20 @@ public class Dashboard extends Activity {
         setContentView(R.layout.activity_dashboard);
     }
     public void openDashboard(View view){
-        Intent i=new Intent (this, Dashboard.class);
-        startActivity(i);
+        Intent dashboard=new Intent (this, Dashboard.class);
+        startActivity(dashboard);
 
 
     }
     public void openMyAccount(View view){
-        Intent i=new Intent (this, MyAccount.class);
-        startActivity(i);
+        Intent acc=new Intent (this, MyAccount.class);
+        startActivity(acc);
 
 
     }
     public void openIAmHereTo(View view){
-        Intent i=new Intent (this, IAmHereTo.class);
-        startActivity(i);
+        Intent hereto=new Intent (this, IAmHereTo.class);
+        startActivity(hereto);
 
 
     }

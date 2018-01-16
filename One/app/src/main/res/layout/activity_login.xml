@@ -65,6 +65,7 @@
         android:layout_height="wrap_content"
         android:text="New User? Sign up here!"
         android:layout_marginTop="50dp"
+
         android:layout_marginLeft="100dp"
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="418dp" />

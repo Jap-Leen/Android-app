@@ -16,6 +16,7 @@ public class Dashboard extends Activity {
         // Set View to activity.xml
         setContentView(R.layout.activity_dashboard);
     }
+
     public void openDashboard(View view){
         Intent dashboard=new Intent (this, Dashboard.class);
         startActivity(dashboard);
@@ -34,4 +35,5 @@ public class Dashboard extends Activity {
 
 
     }
+
 }

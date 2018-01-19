@@ -26,8 +26,9 @@ import java.util.Map;
 public class RegisterActivity extends AppCompatActivity {
 
     private static final String TAG = "RegisterActivity";
-    private static final String URL_FOR_REGISTRATION = "http://ec2-35-154-48-185.ap-south-1.compute.amazonaws.com/users/register";
+    private static final String URL_FOR_REGISTRATION = "http://ec2-13-127-54-127.ap-south-1.compute.amazonaws.com/users/register";
     ProgressDialog progressDialog;
+
 
     private EditText signupInputName, signupInputEmail,signupInputAddress,signupInputContact, signupInputPassword, signupInputUsername;
     private Button btnSignUp;

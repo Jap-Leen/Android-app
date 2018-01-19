@@ -29,5 +29,7 @@
     <activity android:name=".EditDetails" />
     <activity android:name=".IAmHereTo" />
     <activity android:name=".MyAccount" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
     </application>
     </manifest>

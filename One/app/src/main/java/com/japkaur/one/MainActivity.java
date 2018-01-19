@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
     public void openMyAccount(View view){
         Intent acc=new Intent (this, MyAccount.class);
         startActivity(acc);

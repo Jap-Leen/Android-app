@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                     boolean error = jObj.getBoolean("error");
 
                     if (!error) {
-                        String user = jObj.getJSONObject("user").getString("name");
+                        String user = jObj.getJSONObject("user").getString("username");
                         // Launch User activity
                         Intent intent = new Intent(
                                 LoginActivity.this,

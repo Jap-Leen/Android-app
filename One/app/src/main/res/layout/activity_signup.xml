@@ -8,42 +8,19 @@
     android:layout_marginLeft="16dp"
     android:layout_marginTop="25dp"
     tools:context="com.japkaur.one.MainActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    >
-    <TextView
-        android:id="@+id/register_name"
-        android:layout_width="44dp"
-        android:layout_height="18dp"
-        android:text="Name: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="41dp" />
-
-    <EditText
-        android:id="@+id/register_entername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_marginLeft="75dp"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="16dp" />
-    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="15dp">
 
-    <TextView
-        android:id="@+id/register_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Username: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="91dp" />
+        <TextView
+            android:id="@+id/register_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username: "
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="91dp" />
         <EditText
             android:id="@+id/register_enterusername"
             android:layout_width="wrap_content"
@@ -54,63 +31,19 @@
             android:inputType="textPersonName"
             tools:layout_editor_absoluteX="153dp"
             tools:layout_editor_absoluteY="78dp" />
-        </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="15dp">
-    <TextView
-        android:id="@+id/register_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="148dp" />
-    <EditText
-        android:id="@+id/register_enterpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_marginLeft="55dp"
-
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="132dp" />
-</LinearLayout>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp">
 
-    <TextView
-        android:id="@+id/register_reenterpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Re-enter Password: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="203dp" />
-
-        <EditText
-            android:id="@+id/register_enterpasswordagain"
+        <TextView
+            android:id="@+id/register_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            tools:layout_editor_absoluteX="153dp"
-            tools:layout_editor_absoluteY="190dp" />
-        </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
-
-    <TextView
-        android:id="@+id/register_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="260dp" />
+            android:text="Email: "
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="260dp" />
 
         <EditText
             android:id="@+id/register_enteremail"
@@ -122,44 +55,46 @@
             android:inputType="textEmailAddress"
             tools:layout_editor_absoluteX="153dp"
             tools:layout_editor_absoluteY="247dp" />
-        </LinearLayout>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp">
-
-    <TextView
-        android:id="@+id/register_contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contact Number: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="321dp" />
+        <TextView
+            android:id="@+id/register_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password: "
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="148dp" />
         <EditText
-            android:id="@+id/register_entercontact"
+            android:id="@+id/register_enterpassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="55dp"
 
-            android:inputType="phone"
+            android:inputType="textPassword"
             tools:layout_editor_absoluteX="153dp"
-            tools:layout_editor_absoluteY="305dp" />
-        </LinearLayout>
+            tools:layout_editor_absoluteY="132dp" />
+    </LinearLayout>
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp">
-    <TextView
-        android:id="@+id/register_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Address: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="380dp" />
+        <TextView
+            android:id="@+id/register_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type: "
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="380dp" />
 
         <EditText
-            android:id="@+id/register_enteraddress"
+            android:id="@+id/register_entertype"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -168,7 +103,7 @@
             android:inputType="textPostalAddress"
             tools:layout_editor_absoluteX="153dp"
             tools:layout_editor_absoluteY="367dp" />
-        </LinearLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/createaccount"

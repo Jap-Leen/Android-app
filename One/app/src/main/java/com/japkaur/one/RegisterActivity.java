@@ -30,7 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
 
 
-    private EditText signupInputName, signupInputEmail,signupInputAddress,signupInputContact, signupInputPassword, signupInputUsername;
+    private EditText signupInputUsername, signupInputEmail, signupInputPassword ,signupInputType;
     private Button btnSignUp;
 
     private RadioGroup genderRadioGroup;
@@ -43,13 +43,12 @@ public class RegisterActivity extends AppCompatActivity {
         // Progress dialog
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
+        signupInputUsername = (EditText) findViewById(R.id.register_enterusername);
 
-        signupInputName = (EditText) findViewById(R.id.register_entername);
         signupInputEmail = (EditText) findViewById(R.id.register_enteremail);
         signupInputPassword = (EditText) findViewById(R.id.register_enterpassword);
-        signupInputUsername = (EditText) findViewById(R.id.register_enterusername);
-        signupInputContact = (EditText) findViewById(R.id.register_entercontact);
-        signupInputAddress = (EditText) findViewById(R.id.register_enteraddress);
+
+        signupInputType = (EditText) findViewById(R.id.register_entertype);
 
         btnSignUp = (Button) findViewById(R.id.createaccount);
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -62,16 +61,14 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void submitForm() {
 
-       registerUser(signupInputName.getText().toString(),
-                signupInputEmail.getText().toString(),
+        registerUser(signupInputUsername.getText().toString(),signupInputEmail.getText().toString(),
                 signupInputPassword.getText().toString(),
-                signupInputUsername.getText().toString(),
-                signupInputAddress.getText().toString(),
-                signupInputContact.getText().toString());
+
+                signupInputType.getText().toString());
     }
 
-    private void registerUser(final String name,  final String email, final String password,
-                              final String username, final String address, final String contact) {
+    private void registerUser( final String username, final String email, final String password,
+                               final String ty) {
         // Tag used to cancel the request
         String cancel_req_tag = "register";
 
@@ -91,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
                     boolean error = jObj.getBoolean("error");
 
                     if (!error) {
-                        String user = jObj.getJSONObject("user").getString("name");
+                        String user = jObj.getJSONObject("user").getString("username");
                         Toast.makeText(getApplicationContext(), "Hi " + user +", You are successfully Added!", Toast.LENGTH_SHORT).show();
 
                         // Launch login activity
@@ -125,12 +122,11 @@ public class RegisterActivity extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 // Posting params to register url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("name", name);
+                params.put("username", username);
+
                 params.put("email", email);
                 params.put("password", password);
-                params.put("username", username);
-                params.put("contact", contact);
-                params.put("address", address);
+                params.put("ty", ty);
                 return params;
             }
         };

@@ -31,15 +31,25 @@ public class LoginActivity extends AppCompatActivity {
     private static final String URL_FOR_LOGIN = "http://ec2-13-127-54-127.ap-south-1.compute.amazonaws.com/users/login";
     ProgressDialog progressDialog;
     private EditText loginInputEmail, loginInputPassword;
+
     private Button btnlogin;
     private Button btnLinkSignup;
+    // User Session Manager Class
+    UserSessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // User Session Manager
+        session = new UserSessionManager(getApplicationContext());
+
         loginInputEmail = (EditText) findViewById(R.id.login_enteremail);
         loginInputPassword = (EditText) findViewById(R.id.login_enterpassword);
+        Toast.makeText(getApplicationContext(),
+                "User Login Status: " + session.isUserLoggedIn(),
+                Toast.LENGTH_LONG).show();
         btnlogin = (Button) findViewById(R.id.login);
         btnLinkSignup = (Button) findViewById(R.id.register);
         // Progress dialog
@@ -83,14 +93,25 @@ public class LoginActivity extends AppCompatActivity {
                     //boolean error = jObj.getBoolean("error");
 
                     if (!error) {
+
+                        session.createUserLoginSession(email, password);
+                        // Starting MainActivity
+                        Intent i = new Intent(getApplicationContext(), Dashboard.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                        // Add new Flag to start new Activity
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(i);
+
+                        finish();
                         //String user = jObj.getJSONObject("user").getString("username");
                         // Launch User activity
-                        Intent intent = new Intent(
-                                LoginActivity.this,
-                                Dashboard.class);
+                        //Intent intent = new Intent(
+                          //      LoginActivity.this,
+                            //    Dashboard.class);
                         //intent.putExtra("username", user);
-                        startActivity(intent);
-                        finish();
+                        //startActivity(intent);
+                        //finish();
                     } else {
 
                         String errorMsg = jObj.getString("error_msg");

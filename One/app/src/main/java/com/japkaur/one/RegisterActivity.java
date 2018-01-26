@@ -1,3 +1,4 @@
+
 package com.japkaur.one;
 
 /**
@@ -33,7 +34,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText signupInputUsername, signupInputEmail, signupInputPassword ,signupInputType;
     private Button btnSignUp;
 
-    private RadioGroup genderRadioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,31 +80,41 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(String response) {
-                Log.d(TAG, "Register Response: " + response.toString());
-                hideDialog();
+                try{
+                    Log.d(TAG, "Register Response: " + response.toString());
+                    hideDialog();
+                }
+              catch (Exception e)
+              { Log.e(TAG, "whhhhhhhhhat");}
+
 
                 try {
                     JSONObject jObj = new JSONObject(response);
-                    boolean error = jObj.getBoolean("error");
+                    int intError = jObj.getInt("error");
+                    boolean error = (intError > 0) ? true : false;
+                    //boolean error = jObj.getBoolean("error");
+                    //Log.d(TAG, "vygbuy");
 
                     if (!error) {
-                        String user = jObj.getJSONObject("user").getString("username");
-                        Toast.makeText(getApplicationContext(), "Hi " + user +", You are successfully Added!", Toast.LENGTH_SHORT).show();
+
+                       // String user = jObj.getJSONObject("user").getString("username");
+                        Toast.makeText(getApplicationContext(), "Hi! You have been registered successfully!", Toast.LENGTH_LONG).show();
 
                         // Launch login activity
                         Intent intent = new Intent(
                                 RegisterActivity.this,
                                 LoginActivity.class);
                         startActivity(intent);
+                        Log.e(TAG, "errrrrror1");
                         finish();
                     } else {
-
+                        Log.e(TAG, "error2");
                         String errorMsg = jObj.getString("error_msg");
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
                     }
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                  e.printStackTrace();
                 }
 
             }
@@ -123,7 +133,6 @@ public class RegisterActivity extends AppCompatActivity {
                 // Posting params to register url
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("username", username);
-
                 params.put("email", email);
                 params.put("password", password);
                 params.put("ty", ty);

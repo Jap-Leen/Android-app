@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:id="@+id/bookslayout"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:scaleType="fitXY"
+        android:layout_height="40dp"
+        android:id="@+id/book"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="bookname"
+        android:id="@+id/BookName"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/book"
+        android:layout_toLeftOf="@+id/Price"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="price"
+        android:id="@+id/Price"
+        android:textColor="@color/colorAccent"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Author"
+        android:id="@+id/author"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/BookName"
+        android:layout_toRightOf="@id/book"
+        android:textColor="#666"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="quantity"
+        android:id="@+id/quantity"
+        android:layout_marginLeft="5dp"
+        android:layout_below="@id/author"
+        android:layout_toRightOf="@id/book"
+        android:textColor="#666"/>
+
+</RelativeLayout>

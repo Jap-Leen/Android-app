@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/requestbooks"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
@@ -9,17 +11,17 @@
 
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/requestname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name:"
+        android:text="Name of Book:"
         android:layout_marginTop="45dp"
         android:layout_marginLeft="50dp"
         tools:layout_editor_absoluteX="29dp"
         tools:layout_editor_absoluteY="73dp" />
 
     <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView4"
+        android:id="@+id/enterrequestname"
         android:layout_width="285dp"
         android:layout_height="43dp"
         android:layout_marginTop="5dp"
@@ -28,7 +30,7 @@
         tools:layout_editor_absoluteY="139dp" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/requestquantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quantity:"
@@ -37,8 +39,8 @@
         tools:layout_editor_absoluteX="29dp"
         tools:layout_editor_absoluteY="156dp" />
 
-    <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView2"
+    <EditText
+        android:id="@+id/enterrequestquantity"
         android:layout_width="285dp"
         android:layout_height="43dp"
         android:layout_marginTop="5dp"
@@ -56,8 +58,8 @@
         tools:layout_editor_absoluteX="29dp"
         tools:layout_editor_absoluteY="236dp" />
 
-    <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView"
+    <EditText
+        android:id="@+id/enterrequestemail"
         android:layout_width="285dp"
         android:layout_height="43dp"
         android:layout_marginTop="5dp"
@@ -77,7 +79,7 @@
         tools:layout_editor_absoluteY="321dp" />
 
     <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView5"
+        android:id="@+id/enterrequestlocation"
         android:layout_width="285dp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="50dp"
@@ -86,7 +88,7 @@
         tools:layout_editor_absoluteY="314dp" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/submitrequest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SUBMIT"

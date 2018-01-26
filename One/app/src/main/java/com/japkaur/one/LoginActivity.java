@@ -78,15 +78,17 @@ public class LoginActivity extends AppCompatActivity {
                 hideDialog();
                 try {
                     JSONObject jObj = new JSONObject(response);
-                    boolean error = jObj.getBoolean("error");
+                    int intError = jObj.getInt("error");
+                    boolean error = (intError > 0) ? true : false;
+                    //boolean error = jObj.getBoolean("error");
 
                     if (!error) {
-                        String user = jObj.getJSONObject("user").getString("username");
+                        //String user = jObj.getJSONObject("user").getString("username");
                         // Launch User activity
                         Intent intent = new Intent(
                                 LoginActivity.this,
                                 Dashboard.class);
-                        intent.putExtra("username", user);
+                        //intent.putExtra("username", user);
                         startActivity(intent);
                         finish();
                     } else {

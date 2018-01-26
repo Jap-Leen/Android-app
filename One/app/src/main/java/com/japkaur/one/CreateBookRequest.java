@@ -55,7 +55,7 @@ public class CreateBookRequest extends AppCompatActivity {
     AutoCompleteTextView auto_tv;
     ArrayList<String> names;
     ArrayAdapter<String> adapter;
-    String browserKey = "googleplacesapi";
+    String browserKey = "key1";
 
 
 

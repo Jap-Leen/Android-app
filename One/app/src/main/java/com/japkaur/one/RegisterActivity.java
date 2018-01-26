@@ -11,9 +11,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -21,7 +23,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -34,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText signupInputUsername, signupInputEmail, signupInputPassword ,signupInputType;
     private Button btnSignUp;
 
+    private  Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
         signupInputEmail = (EditText) findViewById(R.id.register_enteremail);
         signupInputPassword = (EditText) findViewById(R.id.register_enterpassword);
 
-        signupInputType = (EditText) findViewById(R.id.register_entertype);
-
+        spinner = (Spinner) findViewById(R.id.spinner);
         btnSignUp = (Button) findViewById(R.id.createaccount);
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +62,20 @@ public class RegisterActivity extends AppCompatActivity {
                 submitForm();
             }
         });
+        addItemsOnSpinner();
+
+    }
+    public void addItemsOnSpinner() {
+
+        spinner = (Spinner) findViewById(R.id.spinner);
+        List<String > list = new ArrayList<String>();
+        list.add("User");
+        list.add("Admin");
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
     }
 
     private void submitForm() {
@@ -64,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
         registerUser(signupInputUsername.getText().toString(),signupInputEmail.getText().toString(),
                 signupInputPassword.getText().toString(),
 
-                signupInputType.getText().toString());
+                String.valueOf(signupInputType));
     }
 
     private void registerUser( final String username, final String email, final String password,

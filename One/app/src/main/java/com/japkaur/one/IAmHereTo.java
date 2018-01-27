@@ -31,7 +31,7 @@ public class IAmHereTo extends Activity {
         donabook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(IAmHereTo.this, Dashboard.class);
+                Intent intent = new Intent(IAmHereTo.this, CreateAvailable.class);
                 startActivity(intent);
             }
         });

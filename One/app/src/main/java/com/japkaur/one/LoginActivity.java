@@ -47,9 +47,9 @@ public class LoginActivity extends AppCompatActivity {
 
         loginInputEmail = (EditText) findViewById(R.id.login_enteremail);
         loginInputPassword = (EditText) findViewById(R.id.login_enterpassword);
-        Toast.makeText(getApplicationContext(),
-                "User Login Status: " + session.isUserLoggedIn(),
-                Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),
+          //      "User Login Status: " + session.isUserLoggedIn(),
+            //    Toast.LENGTH_LONG).show();
         btnlogin = (Button) findViewById(R.id.login);
         btnLinkSignup = (Button) findViewById(R.id.register);
         // Progress dialog

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/bg"
     tools:context="com.japkaur.one.MainActivity">
 
 
@@ -13,7 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name:"
-        android:layout_marginTop="25dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="35dp"
         android:layout_marginLeft="50dp"
         tools:layout_editor_absoluteX="29dp"
         tools:layout_editor_absoluteY="73dp" />
@@ -24,6 +26,8 @@
         android:layout_height="43dp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="50dp"
+        android:textColor="@color/colorPrimaryDark"
+
         tools:layout_editor_absoluteX="128dp"
         tools:layout_editor_absoluteY="139dp" />
 
@@ -31,6 +35,8 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+
         android:text="Quantity:"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="50dp"
@@ -42,6 +48,8 @@
         android:layout_width="285dp"
         android:layout_height="43dp"
         android:layout_marginTop="5dp"
+        android:textColor="@color/colorPrimaryDark"
+
         android:layout_marginLeft="50dp"
         tools:layout_editor_absoluteX="128dp"
         tools:layout_editor_absoluteY="220dp" />
@@ -51,6 +59,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email:"
+        android:textColor="@color/colorPrimaryDark"
+
         android:layout_marginTop="25dp"
         android:layout_marginLeft="50dp"
         tools:layout_editor_absoluteX="29dp"
@@ -62,6 +72,8 @@
         android:layout_height="43dp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="50dp"
+        android:textColor="@color/colorPrimaryDark"
+
         tools:layout_editor_absoluteX="128dp"
         tools:layout_editor_absoluteY="58dp" />
 
@@ -71,6 +83,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Location:"
+        android:textColor="@color/colorPrimaryDark"
+
         android:layout_marginTop="25dp"
         android:layout_marginLeft="50dp"
         tools:layout_editor_absoluteX="29dp"
@@ -82,6 +96,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="50dp"
         android:layout_height="41dp"
+        android:textColor="@color/colorPrimaryDark"
+
         tools:layout_editor_absoluteX="128dp"
         tools:layout_editor_absoluteY="314dp" />
 
@@ -96,6 +112,8 @@
         android:layout_height="wrap_content"
         android:text="Upload image:"
         android:layout_marginTop="15dp"
+        android:textColor="@color/colorPrimaryDark"
+
         android:layout_marginLeft="50dp"
         tools:layout_editor_absoluteX="27dp"
         tools:layout_editor_absoluteY="363dp" />
@@ -114,8 +132,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SUBMIT"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="50dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/bg"
+        android:layout_marginTop="35dp"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="406dp" />
 </LinearLayout>

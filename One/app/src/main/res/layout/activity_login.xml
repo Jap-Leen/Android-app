@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     android:orientation="vertical"
     tools:context="com.japkaur.one.MainActivity">
 
@@ -12,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
+        android:textColor="@color/colorPrimaryDark"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="50dp"
         tools:layout_editor_absoluteX="77dp"
@@ -20,6 +22,8 @@
         android:id="@+id/login_enteremail"
         android:layout_width="270dp"
         android:layout_height="47dp"
+        android:textColor="@color/colorPrimaryDark"
+
         android:ems="10"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="50dp"
@@ -33,6 +37,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password:"
+        android:textColor="@color/colorPrimaryDark"
+
         android:layout_marginTop="50dp"
         android:layout_marginLeft="50dp"
         tools:layout_editor_absoluteX="77dp"
@@ -41,6 +47,8 @@
         android:id="@+id/login_enterpassword"
         android:layout_width="270dp"
         android:layout_height="47dp"
+        android:textColor="@color/colorPrimaryDark"
+
         android:ems="10"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="50dp"
@@ -54,18 +62,22 @@
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="  Login  "
+        android:background="@drawable/roundbutton"
+        android:textColor="@color/bg"
+        android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="150dp"
         tools:layout_editor_absoluteX="135dp"
         tools:layout_editor_absoluteY="301dp" />
     <Button
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New User? Sign up here!"
+        android:text="  New User? Sign up here!  "
+        android:background="@drawable/roundbutton"
+        android:textColor="@color/bg"
+        android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="100dp"
         tools:layout_editor_absoluteX="102dp"
         tools:layout_editor_absoluteY="418dp" />
 

@@ -5,85 +5,116 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/bg"
     tools:context="com.japkaur.one.MainActivity">
-
+  <!--  <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        />-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/img1" />
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="110dp"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
         android:layout_marginTop="30dp"
+        android:background="@drawable/roundbutton"
+
         android:onClick="openMyBookRequests"
-        android:padding="16dp"
-        android:text="My book requests"
+
+        android:text="  My book requests  "
+
+        android:textColor="@color/bg"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="38dp" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Books donated by me"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="30dp"
+        android:background="@drawable/roundbutton"
+        android:textColor="@color/bg"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:text="  Books donated by me  "
+        android:layout_gravity="center"
+
+        android:layout_marginTop="10dp"
         android:onClick="openBooksDonatedByMe"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="123dp" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My transactions"
-        android:layout_marginLeft="115dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:text="  My transactions  "
+        android:layout_gravity="center"
+
+        android:layout_marginTop="10dp"
+        android:background="@drawable/roundbutton"
+        android:textColor="@color/bg"
         android:onClick="openMyTransactions"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="212dp" />
 
     <Button
         android:id="@+id/getbooksrequested"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Books requested"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+
+        android:background="@drawable/roundbutton"
         android:onClick="openBooksRequested"
+        android:text="  Books requested  "
+        android:textColor="@color/bg"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="302dp" />
+>
 
-    <Button android:id="@+id/btnLogout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout"/>
+
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+       android:layout_margin="16dp"
         android:src="@android:drawable/ic_input_add" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp">
-        <LinearLayout
+        >
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="30dp"
-        app:srcCompat="@drawable/account"
-        android:onClick="openMyAccount"
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
 
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="442dp" />
+                android:layout_marginLeft="30dp"
+                app:srcCompat="@drawable/account"
+                android:onClick="openMyAccount"
+                android:layout_above="@+id/textView27"
+
+                tools:layout_editor_absoluteX="47dp"
+                tools:layout_editor_absoluteY="442dp" />
             <TextView
                 android:id="@+id/textView27"
+                android:layout_alignParentBottom="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="My Account"
@@ -92,57 +123,65 @@
                 android:onClick="openMyAccount"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="485dp" />
-            </LinearLayout>
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="50dp"
-        app:srcCompat="@drawable/book"
-        android:onClick="openIAmHereTo"
-        tools:layout_editor_absoluteY="442dp"
-        tools:layout_editor_absoluteX="171dp" />
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="I am here to..."
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="5dp"
-        android:onClick="openIAmHereTo"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="483dp" />
-    </LinearLayout>
-        <LinearLayout
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="50dp"
+                app:srcCompat="@drawable/book"
+                android:layout_above="@+id/textView28"
+
+                android:onClick="openIAmHereTo"
+                tools:layout_editor_absoluteY="442dp"
+                tools:layout_editor_absoluteX="171dp" />
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I am here to..."
+                android:layout_alignParentBottom="true"
+
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="5dp"
+                android:onClick="openIAmHereTo"
+                tools:layout_editor_absoluteX="147dp"
+                tools:layout_editor_absoluteY="483dp" />
+        </RelativeLayout>
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="40dp"
-        app:srcCompat="@drawable/dash"
-        android:onClick="openDashboard"
-        tools:layout_editor_absoluteY="442dp"
-        tools:layout_editor_absoluteX="290dp" />
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_above="@+id/textView29"
+
+                android:layout_marginLeft="40dp"
+                app:srcCompat="@drawable/dash"
+                android:onClick="openDashboard"
+                tools:layout_editor_absoluteY="442dp"
+                tools:layout_editor_absoluteX="290dp" />
 
 
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dashboard"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
-        android:onClick="openDashboard"
-        tools:layout_editor_absoluteX="283dp"
-        tools:layout_editor_absoluteY="485dp" />
-            </LinearLayout>
-        </LinearLayout>
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dashboard"
+                android:layout_alignParentBottom="true"
+
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="5dp"
+                android:onClick="openDashboard"
+                tools:layout_editor_absoluteX="283dp"
+                tools:layout_editor_absoluteY="485dp" />
+        </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>

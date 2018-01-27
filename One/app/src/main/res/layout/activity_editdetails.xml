@@ -5,18 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="10dp"
+    android:background="@color/bg"
     tools:context="com.japkaur.one.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+
         android:layout_marginLeft="25dp"
         android:layout_marginTop="35dp"
         >
         <TextView
             android:id="@+id/edit_name"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_width="44dp"
             android:layout_height="18dp"
             android:text="Name: "
@@ -27,6 +29,8 @@
             android:id="@+id/edit_entername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+
             android:ems="10"
             android:layout_marginLeft="75dp"
             android:inputType="textPersonName"
@@ -39,11 +43,14 @@
         android:orientation="horizontal"
         android:layout_marginLeft="25dp"
 
+
         android:layout_marginTop="25dp">
 
         <TextView
             android:id="@+id/edit_username"
             android:layout_width="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+
             android:layout_height="wrap_content"
             android:text="Username: "
             tools:layout_editor_absoluteX="16dp"
@@ -53,6 +60,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textColor="@color/colorPrimaryDark"
+
             android:layout_marginLeft="50dp"
 
             android:inputType="textPersonName"
@@ -72,6 +81,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Email: "
+            android:textColor="@color/colorPrimaryDark"
+
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="260dp" />
 
@@ -81,6 +92,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:layout_marginLeft="80dp"
+            android:textColor="@color/colorPrimaryDark"
+
 
             android:inputType="textEmailAddress"
             tools:layout_editor_absoluteX="153dp"
@@ -98,6 +111,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Contact Number: "
+            android:textColor="@color/colorPrimaryDark"
+
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="321dp" />
         <EditText
@@ -106,6 +121,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:layout_marginLeft="15dp"
+            android:textColor="@color/colorPrimaryDark"
+
 
             android:inputType="phone"
             tools:layout_editor_absoluteX="153dp"
@@ -122,6 +139,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Address: "
+            android:textColor="@color/colorPrimaryDark"
+
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="380dp" />
 
@@ -130,18 +149,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textColor="@color/colorPrimaryDark"
+
             android:layout_marginLeft="65dp"
 
             android:inputType="textPostalAddress"
             tools:layout_editor_absoluteX="153dp"
             tools:layout_editor_absoluteY="367dp" />
     </LinearLayout>
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/bg"
+        android:layout_marginTop="35dp"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="406dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:layout_marginTop="40dp">
-        <LinearLayout
+      >
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -149,14 +181,17 @@
                 android:id="@+id/imageButton"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
+
                 android:layout_marginLeft="30dp"
                 app:srcCompat="@drawable/account"
                 android:onClick="openMyAccount"
+                android:layout_above="@+id/textView27"
 
                 tools:layout_editor_absoluteX="47dp"
                 tools:layout_editor_absoluteY="442dp" />
             <TextView
                 android:id="@+id/textView27"
+                android:layout_alignParentBottom="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="My Account"
@@ -165,8 +200,8 @@
                 android:onClick="openMyAccount"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="485dp" />
-        </LinearLayout>
-        <LinearLayout
+        </RelativeLayout>
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -176,6 +211,8 @@
                 android:layout_height="70dp"
                 android:layout_marginLeft="50dp"
                 app:srcCompat="@drawable/book"
+                android:layout_above="@+id/textView28"
+
                 android:onClick="openIAmHereTo"
                 tools:layout_editor_absoluteY="442dp"
                 tools:layout_editor_absoluteX="171dp" />
@@ -184,13 +221,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="I am here to..."
+                android:layout_alignParentBottom="true"
+
                 android:layout_marginLeft="45dp"
                 android:layout_marginTop="5dp"
                 android:onClick="openIAmHereTo"
                 tools:layout_editor_absoluteX="147dp"
                 tools:layout_editor_absoluteY="483dp" />
-        </LinearLayout>
-        <LinearLayout
+        </RelativeLayout>
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -199,6 +238,8 @@
                 android:id="@+id/imageButton3"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
+                android:layout_above="@+id/textView29"
+
                 android:layout_marginLeft="40dp"
                 app:srcCompat="@drawable/dash"
                 android:onClick="openDashboard"
@@ -211,11 +252,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dashboard"
+                android:layout_alignParentBottom="true"
+
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="5dp"
                 android:onClick="openDashboard"
                 tools:layout_editor_absoluteX="283dp"
                 tools:layout_editor_absoluteY="485dp" />
-        </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

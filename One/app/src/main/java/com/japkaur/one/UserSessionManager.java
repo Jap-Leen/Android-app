@@ -45,6 +45,7 @@ public class UserSessionManager {
         editor = pref.edit();
     }
 
+
     //Create login session
     public void createUserLoginSession(String name, String email){
         // Storing login value as TRUE

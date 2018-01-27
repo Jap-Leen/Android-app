@@ -51,6 +51,11 @@
         android:onClick="openBooksRequested"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="302dp" />
+
+    <Button android:id="@+id/btnLogout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"/>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"

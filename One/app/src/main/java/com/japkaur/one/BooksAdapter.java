@@ -15,15 +15,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import com.japkaur.one.R;
-import com.japkaur.one.Books;
-
-
 
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHolder> {
     public static final String TAG = BooksAdapter.class.getSimpleName();
 
-    private List<Books> books;
+    private List<Book> books;
 
     private Context context;
 
@@ -43,7 +39,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
         }
     }
 
-    public BooksAdapter(List<Books> books,  Context context) {
+    public BooksAdapter(List<Book> books, Context context) {
         this.books = books;
 
         this.context = context;
@@ -59,9 +55,9 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BooksViewHol
 
     @Override
     public void onBindViewHolder(BooksViewHolder holder, final int position) {
-        holder.bookTitle.setText(books.get(position).getTitle());
-        holder.author.setText(books.get(position).getAuthor());
-        holder.quantity.setText(books.get(position).getQuantity());
+        //holder.bookTitle.setText(books.get(position).getTitle());
+        //holder.author.setText(books.get(position).getAuthor());
+        //holder.quantity.setText(books.get(position).getQuantity());
         Log.e(TAG ,"Error!" );
     }
 

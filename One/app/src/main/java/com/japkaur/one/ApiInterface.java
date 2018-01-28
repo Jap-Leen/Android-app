@@ -14,6 +14,6 @@ public interface ApiInterface {
     @GET("/search/index.xml")
     Call<BooksResponse> getBookInfoByString(@Query("key") String APIKey, @Query("q") String name);
     @GET("/search/index.xml")
-    Call<BooksResponse> getBookInfoById(@Query("key") String APIKey, @Query("q") String id);
+    Call<BooksResponse> getBookInfoById(@Query("key") String APIKey, @Query("q") Integer id);
     }
 

@@ -8,7 +8,7 @@ import org.simpleframework.xml.Element;
 
 public class BooksResponse {
     @Element(required = false)
-    Books book;
+    Book book;
 
     @Override
     public String toString() {
@@ -17,7 +17,7 @@ public class BooksResponse {
                 '}';
     }
 
-    public Books getBook() {
+    public Book getBook() {
         return book;
     }
 }

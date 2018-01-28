@@ -29,16 +29,16 @@
         </activity>
         <activity android:name=".MainActivity" />
 
-        <activity android:name=".Dashboard" />
-    <activity android:name=".EditDetails" />
+        <activity android:name=".Dashboard" android:label="My Dashboard" />
+    <activity android:name=".EditDetails" android:label="Edit Details"/>
     <activity android:name=".IAmHereTo" />
-    <activity android:name=".MyAccount" />
+    <activity android:name=".MyAccount" android:label="My Account"/>
         <activity android:name=".ChangePassword"/>
-        <activity android:name=".CreateAvailable"/>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".CreateAvailable" android:label="Donate a Book"/>
+        <activity android:name=".LoginActivity" android:label="Offer a Book"/>
+        <activity android:name=".RegisterActivity" android:label="User Registration"/>
         <activity android:name=".GetBooksRequested" />
-        <activity android:name=".CreateBookRequest" />
+        <activity android:name=".CreateBookRequest" android:label="Request a Book"/>
 
     </application>
     </manifest>

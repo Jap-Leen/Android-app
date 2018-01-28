@@ -44,7 +44,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 import static com.android.volley.Request.Method.GET;
-import com.japkaur.one.Books;
+import com.japkaur.one.Book;
 
 
 public class CreateBookRequest extends AppCompatActivity {
@@ -120,11 +120,12 @@ public class CreateBookRequest extends AppCompatActivity {
 
 
     private static final String TAG = "CreateBookRequestActivity";
+     Integer id;
     private static final String URL_FOR_REQUESTING = "http://ec2-13-127-54-127.ap-south-1.compute.amazonaws.com/users/createrequest";
     ProgressDialog progressDialog;
 
     private final static String ApiKEY = "key";
-    private List<Books> books;
+    //private List<Book> books;
 
     private EditText createreqInputLocation, createreqInputName, createreqInputQuantity, createreqInputEmail;
     private Button btnCreateReq;
@@ -171,6 +172,12 @@ public class CreateBookRequest extends AppCompatActivity {
         });
 
         btnCreateReq = (Button) findViewById(R.id.submitrequest);
+        Book bookrequested = new Book();
+        //bookrequested.getTitle();
+        ApiInterface serv= ApiClient.getClient().create(ApiInterface.class);
+        serv.getBookInfoByString(ApiKEY,createreqInputName.getText().toString());
+
+        id = bookrequested.getId();
         btnCreateReq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -181,13 +188,13 @@ public class CreateBookRequest extends AppCompatActivity {
 
     private void submitForm() {
 
-        createRequest(createreqInputLocation.getText().toString(),createreqInputName.getText().toString(),
+        createRequest(createreqInputLocation.getText().toString(), String.valueOf(id),
 
-                createreqInputQuantity.getText().toString(),
+                String.valueOf(createreqInputQuantity),
                 createreqInputEmail.getText().toString());
     }
 
-    private void createRequest( final String location, final String name, final String quantity,
+    private void createRequest( final String location, final String id, final String quantity,
                                final String email) {
         // Tag used to cancel the request
         String cancel_req_tag = "cancelrequest";
@@ -195,12 +202,7 @@ public class CreateBookRequest extends AppCompatActivity {
         progressDialog.setMessage("Adding request ...");
         showDialog();
 
-        Books bookrequested = new Books();
-        bookrequested.setTitle(name);
-        ApiInterface serv= ApiClient.getClient().create(ApiInterface.class);
-        serv.getBookInfoByString(ApiKEY,name);
 
-        final String id = bookrequested.getId();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 URL_FOR_REQUESTING, new Response.Listener<String>() {
@@ -250,7 +252,7 @@ public class CreateBookRequest extends AppCompatActivity {
                 // Posting params to request url
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("location", location);
-                params.put("id", id);
+                params.put("id", String.valueOf(id));
                 params.put("quantity", String.valueOf(quantity));
 
                 params.put("email", email);

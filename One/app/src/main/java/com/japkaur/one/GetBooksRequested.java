@@ -29,7 +29,8 @@ package com.japkaur.one;
         public class GetBooksRequested extends AppCompatActivity {
             private final static String API_KEY = "key";
             Button btnGetBooksRequested;
-            List<Books> books;
+
+            List<Book> books;
             BooksAdapter adapter;
             final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.books_recycler_view);
 
@@ -102,15 +103,15 @@ package com.japkaur.one;
                                 for (int i = 0; i < responseArray.length(); i++) {
                                     JSONObject battleObj = responseArray.getJSONObject(i);
 
-                                    //creating object of model class(ModelWarDetails)
-                                    Books book = new Books();
+                                    //creating object of model class
+                                    Book book = new Book();
                             /*
                             fetching data based on key from JSON and setting into model class
                             */
-                                    book.setId("id");
-                                    book.setQuantity("quantity");
-                                    book.setPrice("price");
-                                    String a=book.getId();
+                                  //  book.setId("id");
+                                   // book.setQuantity("quantity");
+                                    //book.setPrice("price");
+                                    Integer a=book.getId();
                                     ApiInterface serv= ApiClient.getClient().create(ApiInterface.class);
                                     serv.getBookInfoById(API_KEY,a);
                                     //adding data into List

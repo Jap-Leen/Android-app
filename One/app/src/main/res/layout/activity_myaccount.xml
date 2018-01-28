@@ -127,9 +127,11 @@
                 android:layout_height="70dp"
 
                 android:layout_marginLeft="30dp"
-                app:srcCompat="@drawable/account"
+                android:src="@drawable/account"
                 android:onClick="openMyAccount"
                 android:layout_above="@+id/textView27"
+                android:scaleType="fitXY"
+                android:padding="0dp"
 
                 tools:layout_editor_absoluteX="47dp"
                 tools:layout_editor_absoluteY="442dp" />
@@ -154,7 +156,9 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="50dp"
-                app:srcCompat="@drawable/book"
+                android:scaleType="fitXY"
+                android:padding="0dp"
+                android:src="@drawable/book"
                 android:layout_above="@+id/textView28"
 
                 android:onClick="openIAmHereTo"
@@ -183,9 +187,11 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_above="@+id/textView29"
+                android:scaleType="fitXY"
+                android:padding="0dp"
 
                 android:layout_marginLeft="40dp"
-                app:srcCompat="@drawable/dash"
+                android:src="@drawable/dash"
                 android:onClick="openDashboard"
                 tools:layout_editor_absoluteY="442dp"
                 tools:layout_editor_absoluteX="290dp" />

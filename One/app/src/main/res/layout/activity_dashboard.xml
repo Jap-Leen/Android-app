@@ -20,9 +20,12 @@
         android:id="@+id/imageView"
         android:layout_width="350dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
+        android:scaleType="fitXY"
+        android:padding="0dp"
+
         android:layout_height="150dp"
-        app:srcCompat="@drawable/img1" />
+        android:src="@drawable/img1" />
     <Button
         android:id="@+id/button3"
         android:layout_width="200dp"
@@ -104,9 +107,10 @@
                 android:id="@+id/imageButton"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-
+                android:scaleType="fitXY"
+                android:padding="0dp"
                 android:layout_marginLeft="30dp"
-                app:srcCompat="@drawable/account"
+                android:src="@drawable/account"
                 android:onClick="openMyAccount"
                 android:layout_above="@+id/textView27"
 
@@ -133,8 +137,10 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="50dp"
-                app:srcCompat="@drawable/book"
+                android:src="@drawable/book"
                 android:layout_above="@+id/textView28"
+                android:scaleType="fitXY"
+                android:padding="0dp"
 
                 android:onClick="openIAmHereTo"
                 tools:layout_editor_absoluteY="442dp"
@@ -164,7 +170,9 @@
                 android:layout_above="@+id/textView29"
 
                 android:layout_marginLeft="40dp"
-                app:srcCompat="@drawable/dash"
+                android:scaleType="fitXY"
+                android:padding="0dp"
+                android:src="@drawable/dash"
                 android:onClick="openDashboard"
                 tools:layout_editor_absoluteY="442dp"
                 tools:layout_editor_absoluteX="290dp" />

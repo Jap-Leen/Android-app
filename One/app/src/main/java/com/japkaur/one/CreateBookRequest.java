@@ -9,12 +9,14 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -37,8 +39,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.LogManager;
 
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -52,10 +56,15 @@ public class CreateBookRequest extends AppCompatActivity {
     private static final String TAG_RESULT = "predictions";
     JSONObject json;
 
-    AutoCompleteTextView auto_tv;
     ArrayList<String> names;
+    ArrayList<String> booksString;
+    List<Book> books;
     ArrayAdapter<String> adapter;
-    String browserKey = "key1";
+    ArrayAdapter<String> bookAdapter;
+    String browserKey = "AIzaSyC2JsOqNmUAzZA_IN83bjpotK0CyFwvTxE";
+    private final static String ApiKEY = "N7qI6ygxuHc0ZxIlhK0KJg";
+
+    private Book book;
 
 
 
@@ -83,7 +92,7 @@ public class CreateBookRequest extends AppCompatActivity {
                 try {
 
                     JSONArray ja = response.getJSONArray(TAG_RESULT);
-
+                    names.clear();
                     for (int i = 0; i < ja.length(); i++) {
                         JSONObject c = ja.getJSONObject(i);
                         String description = c.getString("description");
@@ -105,7 +114,7 @@ public class CreateBookRequest extends AppCompatActivity {
                             return view;
                         }
                     };
-                    auto_tv.setAdapter(adapter);
+                    createreqInputLocation.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                 } catch (Exception e) {
                 }
@@ -119,16 +128,69 @@ public class CreateBookRequest extends AppCompatActivity {
     }
 
 
+    public void updateBookList(final String bookText) {
+
+        ApiInterface serv= ApiClient.getClient().create(ApiInterface.class);
+        serv.getBookInfoByString(ApiKEY,bookText).enqueue(new Callback<BooksResponse>() {
+            @Override
+            public void onResponse(Call<BooksResponse> call, retrofit2.Response<BooksResponse> response) {
+                Log.d(TAG, "onResponse() called with: call = [" + call + "], response = [" + response + "] Size: " + response.body().search.books.size());
+
+                books = response.body().getSearch().getBooks();
+                
+                booksString.clear();
+                
+                for(int i=0;i<books.size();i++){
+                    booksString.add(books.get(i).getBookDetails().getTitle());
+                }
+
+                bookAdapter = new ArrayAdapter<String>(
+                        getApplicationContext(),
+                        android.R.layout.simple_list_item_1, booksString) {
+                    @Override
+                    public View getView(int position,
+                                        View convertView, ViewGroup parent) {
+                        View view = super.getView(position,
+                                convertView, parent);
+                        TextView text = (TextView) view
+                                .findViewById(android.R.id.text1);
+                        text.setTextColor(Color.BLACK);
+                        return view;
+                    }
+                };
+                createreqInputName.setAdapter(bookAdapter);
+                createreqInputName.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        book = books.get(i);
+                    }
+                });
+                bookAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<BooksResponse> call, Throwable t) {
+                Log.d(TAG, "onFailure() called with: call = [" + call + "], t = [" + t + "]");
+            }
+        });
+
+
+    }
+
+
+
+
+
     private static final String TAG = "CreateBookRequestActivity";
      Integer id;
     private static final String URL_FOR_REQUESTING = "http://ec2-13-127-54-127.ap-south-1.compute.amazonaws.com/users/createrequest";
     ProgressDialog progressDialog;
 
-    private final static String ApiKEY = "key";
     //private List<Book> books;
 
-    private EditText createreqInputLocation, createreqInputName, createreqInputQuantity, createreqInputEmail;
+    private EditText createreqInputQuantity, createreqInputEmail;
     private Button btnCreateReq;
+    private AutoCompleteTextView createreqInputLocation, createreqInputName;
 
 
     @Override
@@ -139,17 +201,17 @@ public class CreateBookRequest extends AppCompatActivity {
         // Progress dialog
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        createreqInputLocation = (EditText) findViewById(R.id.enterrequestlocation);
-        createreqInputName = (EditText) findViewById(R.id.enterrequestname);
+        createreqInputLocation = (AutoCompleteTextView) findViewById(R.id.enterrequestlocation);
+        createreqInputName = (AutoCompleteTextView) findViewById(R.id.enterrequestname);
         createreqInputQuantity = (EditText) findViewById(R.id.enterrequestquantity);
         createreqInputEmail = (EditText) findViewById(R.id.enterrequestemail);
 
-        auto_tv = (AutoCompleteTextView) findViewById(R.id.enterrequestlocation);
-        auto_tv.setThreshold(0);
+        createreqInputLocation.setThreshold(0);
+        createreqInputName.setThreshold(0);
 
         names = new ArrayList<String>();
 
-        auto_tv.addTextChangedListener(new TextWatcher() {
+        createreqInputLocation.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
 
@@ -163,19 +225,34 @@ public class CreateBookRequest extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before,
                                       int count) {
 
-                if (s.toString().length() <= 3) {
-                    names = new ArrayList<String>();
                     updateList(s.toString());
-                }
 
             }
         });
 
+        createreqInputName.addTextChangedListener(new TextWatcher() {
+
+            public void afterTextChanged(Editable s) {
+
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+
+            }
+
+            public void onTextChanged(CharSequence s, int start, int before,
+                                      int count) {
+                    updateBookList(s.toString());
+            }
+        });
+
+        booksString = new ArrayList<>();
+
         btnCreateReq = (Button) findViewById(R.id.submitrequest);
         Book bookrequested = new Book();
         //bookrequested.getTitle();
-        ApiInterface serv= ApiClient.getClient().create(ApiInterface.class);
-        serv.getBookInfoByString(ApiKEY,createreqInputName.getText().toString());
+
 
         id = bookrequested.getId();
         btnCreateReq.setOnClickListener(new View.OnClickListener() {
@@ -188,15 +265,15 @@ public class CreateBookRequest extends AppCompatActivity {
 
     private void submitForm() {
 
-        createRequest(createreqInputLocation.getText().toString(), String.valueOf(id),
-
-                String.valueOf(createreqInputQuantity),
+        createRequest(createreqInputLocation.getText().toString(), book.getId(),
+                Integer.parseInt(createreqInputQuantity.getText().toString()),
                 createreqInputEmail.getText().toString());
     }
 
-    private void createRequest( final String location, final String id, final String quantity,
+    private void createRequest( final String location, final int id, final int quantity,
                                final String email) {
         // Tag used to cancel the request
+        Log.d(TAG, "createRequest() called with: location = [" + location + "], id = [" + id + "], quantity = [" + quantity + "], email = [" + email + "]");
         String cancel_req_tag = "cancelrequest";
 
         progressDialog.setMessage("Adding request ...");
@@ -241,7 +318,7 @@ public class CreateBookRequest extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(TAG, "Request Error: " + error.getMessage());
+                Log.e(TAG, "Request Error: " + error);
                 Toast.makeText(getApplicationContext(),
                         error.getMessage(), Toast.LENGTH_LONG).show();
                 hideDialog();
@@ -252,10 +329,10 @@ public class CreateBookRequest extends AppCompatActivity {
                 // Posting params to request url
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("location", location);
-                params.put("id", String.valueOf(id));
+                params.put("isbnNumber", String.valueOf(id));
                 params.put("quantity", String.valueOf(quantity));
-
                 params.put("email", email);
+                params.put("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJyYWh1bCIsImVtYWlsIjoicmFodWxAdGVzdC5jb20iLCJjcmVhdGVkIjoiMjAxOC0wMS0xOVQwOTo1MzoyMC4wMDBaIiwidHkiOiJ1c2VyIiwiaWF0IjoxNTE3MTI2ODAzLCJleHAiOjE1MTcxMzE4MDN9.R1YKeZ12u7r-XIPMOzgyVLn3NuJpWluSBxYVzSoKRYQ");
                 return params;
             }
 

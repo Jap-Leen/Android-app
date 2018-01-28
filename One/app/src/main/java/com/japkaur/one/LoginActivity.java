@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnlogin;
     private Button btnLinkSignup;
     // User Session Manager Class
-    UserSessionManager session;
+    static UserSessionManager session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,13 +88,14 @@ public class LoginActivity extends AppCompatActivity {
                 hideDialog();
                 try {
                     JSONObject jObj = new JSONObject(response);
+                    String token = jObj.getString("token");
                     int intError = jObj.getInt("error");
                     boolean error = (intError > 0) ? true : false;
                     //boolean error = jObj.getBoolean("error");
 
                     if (!error) {
 
-                        session.createUserLoginSession(email, password);
+                        session.createUserLoginSession(email, password, token);
                         // Starting MainActivity
                         Intent i = new Intent(getApplicationContext(), Dashboard.class);
                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

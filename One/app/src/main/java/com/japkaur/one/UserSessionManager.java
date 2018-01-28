@@ -31,13 +31,15 @@ public class UserSessionManager {
 
     // All Shared Preferences Keys
     private static final String IS_USER_LOGIN = "IsUserLoggedIn";
-
-    // User name (make variable public to access from outside)
-    public static final String KEY_NAME = "name";
-
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
 
+    // User name (make variable public to access from outside)
+    public static final String KEY_PWD = "password";
+    public String tok;
+
+
+    public static final String KEY_TOKEN = "token";
     // Constructor
     public UserSessionManager(Context context){
         this._context = context;
@@ -47,20 +49,25 @@ public class UserSessionManager {
 
 
     //Create login session
-    public void createUserLoginSession(String name, String email){
+    public void createUserLoginSession(String email, String password, String token){
         // Storing login value as TRUE
         editor.putBoolean(IS_USER_LOGIN, true);
-
-        // Storing name in pref
-        editor.putString(KEY_NAME, name);
 
         // Storing email in pref
         editor.putString(KEY_EMAIL, email);
 
+        // Storing name in pref
+        editor.putString(KEY_PWD, password);
+
+        tok = new String(token);
+        // Storing emailtoken in pref
+        editor.putString(KEY_TOKEN, token);
+
         // commit changes
         editor.commit();
     }
-
+    public String fetchToken()
+    {  return tok;  }
     /**
      * Check login method will check user login status
      * If false it will redirect user to login page
@@ -89,6 +96,7 @@ public class UserSessionManager {
 
 
 
+
     /**
      * Get stored session data
      * */
@@ -96,12 +104,14 @@ public class UserSessionManager {
 
         //Use hashmap to store user credentials
         HashMap<String, String> user = new HashMap<String, String>();
-
-        // user name
-        user.put(KEY_NAME, pref.getString(KEY_NAME, null));
-
         // user email id
         user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
+        // user pwd
+        user.put(KEY_PWD, pref.getString(KEY_PWD, null));
+        // user token
+        user.put(KEY_TOKEN, pref.getString(KEY_TOKEN, null));
+
+
 
         // return user
         return user;

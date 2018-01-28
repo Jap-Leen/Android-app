@@ -46,6 +46,7 @@ import retrofit2.Callback;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import com.japkaur.one.LoginActivity;
 
 import static com.android.volley.Request.Method.GET;
 import com.japkaur.one.Book;
@@ -190,6 +191,8 @@ public class CreateBookRequest extends AppCompatActivity {
 
     private EditText createreqInputQuantity, createreqInputEmail;
     private Button btnCreateReq;
+    UserSessionManager sess=LoginActivity.session;
+
     private AutoCompleteTextView createreqInputLocation, createreqInputName;
 
 
@@ -197,6 +200,9 @@ public class CreateBookRequest extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createrequest);
+        //sess = LoginActivity.session;
+        if(sess.checkLogin())
+           finish();
 
         // Progress dialog
         progressDialog = new ProgressDialog(this);
@@ -324,6 +330,7 @@ public class CreateBookRequest extends AppCompatActivity {
                 hideDialog();
             }
         }) {
+            //String a=sess.fetchToken();
             @Override
             protected Map<String, String> getParams() {
                 // Posting params to request url
@@ -332,7 +339,7 @@ public class CreateBookRequest extends AppCompatActivity {
                 params.put("isbnNumber", String.valueOf(id));
                 params.put("quantity", String.valueOf(quantity));
                 params.put("email", email);
-                params.put("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJyYWh1bCIsImVtYWlsIjoicmFodWxAdGVzdC5jb20iLCJjcmVhdGVkIjoiMjAxOC0wMS0xOVQwOTo1MzoyMC4wMDBaIiwidHkiOiJ1c2VyIiwiaWF0IjoxNTE3MTI2ODAzLCJleHAiOjE1MTcxMzE4MDN9.R1YKeZ12u7r-XIPMOzgyVLn3NuJpWluSBxYVzSoKRYQ");
+                params.put("token", sess.fetchToken());
                 return params;
             }
 
